@@ -16,7 +16,7 @@
     }
     public class Shoes : ProductModels
     {
-        public int Size { get; set; }
+        public int Sizee { get; set; }
     }
     public class Fotball : ProductModels
     {
