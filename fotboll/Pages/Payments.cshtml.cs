@@ -7,16 +7,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace fotboll.Pages
 {
-    public class Fotboll1Model : PageModel
+    public class PaymentsModel : PageModel
     {
-        public string Meddelande { get; set; }
-
-        public int Siffra { get; set; }
-
-
+        public IEnumerable<Models.Product> CartList { get; set; }
         public void OnGet()
         {
-            Meddelande = " Fotboll";
+            CartList = Data.ShoppingCartManager.GetCartProducts();
+           
         }
+       
     }
 }

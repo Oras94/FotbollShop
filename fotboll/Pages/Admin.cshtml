@@ -1,0 +1,29 @@
+﻿@page
+@model fotboll.Pages.AdminModel
+@{
+}
+<form method="post">
+    <div>
+        <div>
+            <input type="radio" id="Tshirts" name="category" value="Tshirts">
+            <label for="Thirts">Tshirts</label>
+        </div>
+        <div>
+            <input type="radio" id="´Fotball" name="category" value="Fotball">
+            <label for="Fotball">Fotball</label>
+        </div>
+        <div>
+            <input type="radio" id="Shoes" name="category" value="Shoes">
+            <label for="Shoes">Shoes</label>
+        </div>
+
+        
+        <p>lägg till varans Id</p> <input type="text" asp-for="@Model.id" />
+        <p>lägg till titelns Namn </p> <input type="text" asp-for="@Model.name" />
+        <p>lägg till img länk</p> <input type="text" asp-for="@Model.imgFileName" />
+        <p>lägg till varans pris</p> <input type="text" asp-for="@Model.cost" />
+        <p> skriv in antal som skall finnas i lager</p>
+
+    </div>
+    <input type="submit" />
+</form>

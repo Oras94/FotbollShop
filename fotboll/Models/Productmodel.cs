@@ -1,24 +1,30 @@
-﻿namespace fotboll.Models.Pages
+﻿using System;
+
+namespace fotboll.Models
 {
-    public class ProductModels
+    public class Product
     {
         public int ID { get; set; } 
         public string Name { get; set; }
         public decimal Cost { get; set; }
-        public double Width { get; set; }
-        public double Height { get; set; }
-        public double Weight { get; set; }
+
+        public int Supply { get; set; }
+        public string ImgFileName { get; set; }
+
+        
+       
+        
     }
 
-    public class Tshirts : ProductModels
+    public class Tshirts : Product
     {
         public string Color { get; set; }
     }
-    public class Shoes : ProductModels
+    public class Shoes : Product
     {
-        public int Sizee { get; set; }
+        public int Size { get; set; }
     }
-    public class Fotball : ProductModels
+    public class Fotball : Product
     {
         public string Brand { get; set; }
 

@@ -1,10 +1,23 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Shop Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Fotbollsbutik</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@foreach (var product in Model.ProductsList)
+{
+
+ 
+
+        <p>
+            <div class="card col-3" style="width: 40rem;">
+                <img src="./img/@product.ImgFileName" />
+                <p>@product.Cost Euro</p>
+                <p>@product.Name</p>
+                <p>@product.ID</p>
+                <br />
+            </div>
+        </p>
+    
+
+}

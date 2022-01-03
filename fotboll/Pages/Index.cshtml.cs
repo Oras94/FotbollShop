@@ -10,16 +10,18 @@ namespace fotboll.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+        public IEnumerable<Models.Product> ProductsList { get; set; }
+
 
         public void OnGet()
         {
+            ProductsList = Data.ProductManager.GetProducts();
+            ProductsList = from p in ProductsList
+                           where (p is Models.Product)
+                           select (p);
 
+            ProductsList = ProductsList.Where(p => p.Name.Contains("Madrid"));
         }
     }
 }

@@ -1,0 +1,31 @@
+﻿@page
+@model fotboll.Pages.FotballModel
+@{
+}
+
+<body style=" background-color :black">>
+  
+
+    @foreach (var product in Model.ProductsList)
+    {
+
+        if (product is Models.Fotball)
+        {
+
+            <p>
+                <div class="card col-3" >
+                <img src="./img/@product.ImgFileName" />
+                <p>@product.Name</p> 
+                <p>@product.Cost Euro</p>
+
+                <p> Det finns @product.Supply stycken kvar</p>
+                <br />
+                </div>
+                <a asp-page="Fotball" asp-route-productId="@product.ID">
+                    Lägg till i korgen
+                </a>
+            </p>
+        }
+
+    }
+</body>

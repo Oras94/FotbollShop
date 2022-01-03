@@ -1,0 +1,26 @@
+﻿@page
+@model fotboll.Pages.ShoppingCartProductsModel
+@{decimal total = 0;
+}
+
+
+<h2>Här ligger produkterna som du har valt</h2>
+
+@foreach (var cartproduct in Model.CartList)
+{
+    total += cartproduct.Cost;
+
+   
+    <p>
+        <div class="card col-3" style="width: 40rem;">
+            <img src="./img/@cartproduct.ImgFileName" />
+            <p>@cartproduct.Cost Euro</p>
+            <p>@cartproduct.Name</p>
+            <p>@cartproduct.ID</p>
+            <br />
+        </div>
+    </p>
+
+
+}<h4>Summan av det du har valt är @total Euro</h4>
+<a href="Payments">Go to Pay Options</a>
